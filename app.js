@@ -17,6 +17,7 @@ const mongoConnection = mongoose.connect(process.env.DB);
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+app.set('trust proxy', true);
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({ extended: true }));
@@ -28,6 +29,7 @@ app.use(
     saveUninitialized: false,
     cookie: {
       secure: process.env.NODE_ENV === 'production',
+      httpOnly: false,
     },
     store: MongoStore.create({
       clientPromise: mongoConnection.then((self) =>
