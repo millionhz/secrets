@@ -3,9 +3,10 @@ const mongoose = require('mongoose');
 const secretSchema = mongoose.Schema({
   content: {
     type: String,
-    required() {
-      return this.content !== '';
+    required: function () {
+      return this.content.length < 1;
     },
+    trim: true,
   },
   author: {
     type: mongoose.Schema.Types.ObjectId,
