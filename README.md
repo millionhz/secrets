@@ -1,5 +1,7 @@
 # Secrets
 
+A showcase for user authentication on express backend.
+
 ## Modules Used For Authentication
 
 - mongoose - database ORM
