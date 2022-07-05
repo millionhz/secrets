@@ -9,7 +9,7 @@ function submitForm() {
   data.set(email.name, email.value);
   data.set(password.name, password.value);
 
-  fetch('/login', {
+  fetch(form.action, {
     method: form.method,
     body: data,
   }).then((res) => {

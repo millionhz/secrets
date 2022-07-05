@@ -21,7 +21,7 @@ router.post(
       });
   },
   passport.authenticate('local', {
-    successReturnToOrRedirect: '/secrets',
+    successRedirect: '/secrets',
     failureRedirect: '/login',
   })
 );

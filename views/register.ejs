@@ -6,9 +6,9 @@
     <div class="col-sm-8">
       <div class="card">
         <div class="card-body">
-
-          <!-- Makes POST request to /register route -->
-          <form action="/register" method="POST">
+          <div class="alert alert-danger" role="alert" style="display: none">
+            Email is invalid or already in use
+          </div>          <form action="/register" method="POST">
             <div class="form-group">
               <label for="email">Email</label>
               <input type="email" class="form-control" name="email">
@@ -19,23 +19,10 @@
             </div>
             <button type="submit" class="btn btn-dark">Register</button>
           </form>
-
         </div>
       </div>
     </div>
-
-    <!-- <div class="col-sm-4">
-      <div class="card social-block">
-        <div class="card-body">
-          <a class="btn btn-block" href="/auth/google" role="button">
-            <i class="fab fa-google"></i>
-            Sign Up with Google
-          </a>
-        </div>
-      </div>
-    </div> -->
-
   </div>
 </div>
-
+<script src="js/formControl.js"></script>
 <%- include('partials/header') %>
