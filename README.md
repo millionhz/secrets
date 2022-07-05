@@ -1,6 +1,9 @@
 # Secrets
+![Key](./public/images/favicon.ico) 
 
-A showcase for user authentication on express backend.
+A site to post your secrets on.
+
+*A showcase for user authentication on express backend.*
 
 ## Modules Used For Authentication
 
