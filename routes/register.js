@@ -1,8 +1,11 @@
 const express = require('express');
 const passport = require('../utils/auth');
 const User = require('../models/user');
+const { ensureLoggedOut } = require('connect-ensure-login');
 
 const router = new express.Router();
+
+router.use(ensureLoggedOut('/secrets'));
 
 router.get('/', (req, res) => {
   res.render('register');

@@ -4,7 +4,9 @@ const Secret = require('../models/secret');
 
 const router = new express.Router();
 
-router.get('/', ensureLoggedIn('/login'), (req, res) => {
+router.use(ensureLoggedIn('/login'));
+
+router.get('/', (req, res) => {
   Secret.getAllSecrets().then((secrets) => {
     res.render('secrets', { secrets });
   });

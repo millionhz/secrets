@@ -1,7 +1,10 @@
 const express = require('express');
 const passport = require('../utils/auth');
+const { ensureLoggedOut } = require('connect-ensure-login');
 
 const router = new express.Router();
+
+router.use(ensureLoggedOut('/secrets'));
 
 router.get('/', (req, res) => {
   if (req.isAuthenticated()) {
