@@ -12,7 +12,7 @@ router.post('/', ensureLoggedIn('/login'), (req, res) => {
   const { secret } = req.body;
   const { id } = req.user;
 
-  Secret.addSecret(id, secret).then(() => {
+  Secret.addSecret(id, secret).finally(() => {
     res.redirect('/secrets');
   });
 });
