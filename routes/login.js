@@ -1,5 +1,5 @@
 const express = require('express');
-const passport = require('../utils/auth');
+const passport = require('passport');
 const { ensureLoggedOut } = require('connect-ensure-login');
 
 const router = new express.Router();

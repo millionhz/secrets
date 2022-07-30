@@ -1,5 +1,5 @@
 const express = require('express');
-const passport = require('../utils/auth');
+const passport = require('passport');
 const User = require('../models/user');
 const { ensureLoggedOut } = require('connect-ensure-login');
 

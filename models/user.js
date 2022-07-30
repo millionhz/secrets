@@ -38,10 +38,4 @@ userSchema.statics.authenticate = async function (email, password) {
   return user;
 };
 
-async function devInit() {
-  const User = mongoose.model('user', userSchema);
-  // User.deleteMany({}).exec();
-  module.exports = User;
-}
-
-devInit();
+module.exports = mongoose.model('user', userSchema);
