@@ -43,9 +43,6 @@ app.use(
   })
 );
 
-app.use(passport.initialize());
-app.use(passport.session());
-
 passport.use(
   new LocalStrategy({ usernameField: 'email' }, (username, password, done) => {
     User.authenticate(username, password)
@@ -68,6 +65,9 @@ passport.serializeUser((user, cb) => {
 passport.deserializeUser((user, cb) => {
   process.nextTick(() => cb(null, user));
 });
+
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.use('/', indexRouter);
 app.use('/login', loginRouter);
